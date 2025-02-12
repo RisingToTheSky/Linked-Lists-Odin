@@ -32,16 +32,17 @@ class LinkedList {
 		if (this.head == null) {
 			this.head = node;
 			this.size++;
+		} else {
+			// Set current equal to the old head
+			current = this.head;
+
+			// Change the head to the node
+			this.head = node;
+
+			// Change the node next to the node to the current
+			node.nextNode = current;
+			this.size++;
 		}
-		// Set current equal to the old head
-		current = this.head;
-
-		// Change the head to the node
-		this.head = node;
-
-		// Change the node next to the node to the current
-		node.nextNode = current;
-		this.size++;
 	}
 
 	getSize() {
