@@ -9,7 +9,7 @@ list.append("snake");
 list.append("turtle");
 list.pop();
 
-
+console.log(list);
 console.log(list.toString());
 console.log(list.getSize());
 console.log(list.getHead());

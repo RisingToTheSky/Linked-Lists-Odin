@@ -85,9 +85,10 @@ class LinkedList {
 
 	pop() {
 		let current = this.head;
-
-		if (!current.nextNode) {
-			return null;
+		if (!current.nextNode && current.value === this.at(this.size - 1).value) {
+			current.value = null;
+			this.size--;
+			return current;
 		}
 
 		while (current.nextNode) {
@@ -99,7 +100,6 @@ class LinkedList {
 			current = current.nextNode;
 		}
 		
-
 		return current;
 	}
 
@@ -141,7 +141,13 @@ class LinkedList {
 
 	toString() {
 		let current = this.head;
-		let string = `( ${current.value} ) -> `
+		let string = '';
+		if (current === null) {
+			string += ` null `;
+			return string;
+		}
+
+		string = `( ${current.value} ) -> `;
 
 		while (current.nextNode) {
 			string += `( ${current.nextNode.value} ) -> `;
