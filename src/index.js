@@ -8,6 +8,8 @@ list.append("hamster");
 list.append("snake");
 list.append("turtle");
 list.pop();
+list.append("dog");
+list.pop();
 
 console.log(list);
 console.log(list.toString());
