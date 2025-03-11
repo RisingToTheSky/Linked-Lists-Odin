@@ -88,6 +88,7 @@ class LinkedList {
 		let counter = 0;
 
 		if (!current.nextNode && current.value === this.at(this.size - 1).value) {
+			current.value = null;
 			current = null;
 			this.size--;
 			return current;
